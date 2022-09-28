@@ -596,10 +596,16 @@
 
                   {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
 
-                  <p class="line-item-property__field">
-                    <label for="colori-disponbili">Colori Disponbili</label>
-                    <input id="colori-disponbili" type="text" name="properties[Colori Disponbili]">
+                 
+                  <p class="cart-attribute__field">
+                    <label>Colori Disponibili</label><br>
+                    <select id="colori-disponibili" name="attributes[Colori Disponibili]" style="font-size: 1.5rem; width:100%; padding:2%;">
+                      <option value="Red"{% if cart.attributes["Colori Disponibili"] == "Red" %} selected{% endif %}>Red</option>
+                      <option value="Green"{% if cart.attributes["Colori Disponibili"] == "Green" %} selected{% endif %}>Green</option>
+                      <option value="Blue"{% if cart.attributes["Colori Disponibili"] == "Blue" %} selected{% endif %}>Blue</option>
+                    </select>
                   </p>
+
                     <input
                       type="hidden"
                       name="id"
