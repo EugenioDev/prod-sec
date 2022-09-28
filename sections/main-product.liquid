@@ -596,7 +596,8 @@
 
                   {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
 
-                 
+                 {% comment %} Sezioni nuove  {% endcomment %}
+
                   <p class="cart-attribute__field">
                     <label>Colori Disponibili</label><br>
                     <select id="colori-disponibili" name="attributes[Colori Disponibili]" style="font-size: 1.5rem; width:100%; padding:2%;">
@@ -620,6 +621,7 @@
                       <option value="Cotton"{% if cart.attributes["Materiali Disponibili"] == "Cotton" %} selected{% endif %}>Cotton</option>
                     </select>
                   </p>
+                {% comment %} Fine sezione nuove {% endcomment %}
 
                     <input
                       type="hidden"
