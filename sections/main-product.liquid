@@ -606,6 +606,14 @@
                     </select>
                   </p>
 
+                  <p class="cart-attribute__field">
+                    <label>Taglie disponbili</label><br>
+                    <select id="taglie-disponbili" name="attributes[Taglie disponbili]" style="font-size: 1.5rem; width:100%; padding:2%;>
+                      <option value="Medium"{% if cart.attributes["Taglie disponbili"] == "Medium" %} selected{% endif %}>Medium</option>
+                      <option value="Large"{% if cart.attributes["Taglie disponbili"] == "Large" %} selected{% endif %}>Large</option>
+                    </select>
+                  </p>
+
                     <input
                       type="hidden"
                       name="id"
