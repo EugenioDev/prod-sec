@@ -614,6 +614,13 @@
                     </select>
                   </p>
 
+                  <p class="cart-attribute__field">
+                    <label>Materiali</label><br>
+                    <select id="materiali" name="attributes[Materiali]">
+                      <option value="Cotton"{% if cart.attributes["Materiali"] == "Cotton" %} selected{% endif %}>Cotton</option>
+                    </select>
+                </p>
+
                     <input
                       type="hidden"
                       name="id"
