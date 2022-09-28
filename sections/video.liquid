@@ -71,9 +71,9 @@
       </button>
       <template>
         {%- if section.settings.video_url.type == 'youtube' -%}
-          <iframe src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}?enablejsapi=1" class="js-youtube"  autoplay="autoplay" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
+          <video muted src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}?enablejsapi=1" class="js-youtube"  autoplay="autoplay" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></video>
         {%- else -%}
-          <iframe src="https://player.vimeo.com/video/{{ section.settings.video_url.id }}" class="js-vimeo"  autoplay="autoplay" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
+          <video muted src="https://player.vimeo.com/video/{{ section.settings.video_url.id }}" class="js-vimeo"  autoplay="autoplay" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></video>
         {%- endif -%}
       </template>
     </deferred-media>
