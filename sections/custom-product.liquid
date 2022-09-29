@@ -1,0 +1,86 @@
+{% for block in section.blocks %}
+    {% if block.settings.image != blank %}
+    <div id="hero-header" class="relative z-0 page-width" style="height: 30vh; background-size: cover; background-position: center center ;background-image: url('{{ block.settings.image | img_url: '1800x', crop: "center" }}');">
+      <p class="heroTitle">{{block.settings.text}}</p>
+      <p class="heroDescription">{{block.settings.description}}</p>
+      <div id="section-cta">
+        <h3> {{ section.settings.text-box }} </h3>
+        <a href="{{ block.settings.link }}" class="button">{{ block.settings.linktext }}</a>
+      </div>
+    </div>
+    {% endif %}
+{% endfor %}
+
+{% schema %}
+{
+   "name": "Hero Image",
+   "tag": "section",
+   "class": "home-hero-image",
+   "max_blocks": 1,
+   "blocks": [{
+      "type": "image",
+      "name": "Image",
+      "settings": [{
+            "type": "header",
+            "content": "Hero Image"
+         },
+        {
+        "id": "linktext",
+        "type": "text",
+        "label": "Button text",
+        "default": "Scopri di più"
+        },
+         {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+         },
+         {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+         },
+         {
+            "type": "text",
+            "id": "description",
+            "label": "Subtitle"
+         }
+      ]
+   }],
+   "presets": [{
+      "name": "Hero Image",
+      "category": "Image",
+      "blocks": [{
+         "type": "image"
+      }]
+   }],
+  "templates": ["product"]
+}
+{% endschema %}
+
+{%- style -%}
+
+#hero-header{
+  margin-bottom:20px;
+}
+  .heroTitle {
+    color:white;
+    font-size: 50px;
+    text-align: center;
+    margin:0;
+    padding:0;
+    font-weight:bold;
+  }
+  #section-cta {
+    text-align:center;
+  }
+
+  .heroDescription {
+    color:white;
+    font-size: 30px;
+    text-align: center;
+    margin:0;
+    padding:0;
+  }
+
+{%- endstyle -%}
